@@ -4,7 +4,6 @@ const express = require('express');
 require('express-async-errors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const statusRoutes = require('./routes/status');
 const oauthRoutes = require('./routes/oauth');
 const userRoutes = require('./routes/user');
 const { invalidUserAndOrPasswordErrorHandler } = require('./error-handlers/invalid-user-and-or-password');
@@ -21,7 +20,6 @@ async function bootstrap() {
 
   app.use(bodyParser.json());
 
-  app.use(statusRoutes);
   app.use(oauthRoutes);
   app.use(userRoutes);
 
