@@ -9,6 +9,8 @@ const UserSchema = new mongoose.Schema({
   telefones: [PhoneSchema],
   data_criacao: Date,
   data_atualizacao: Date,
+  ultimo_login: Date,
+  token: String,
 }, { timestamps: { createdAt: 'data_criacao', updatedAt: 'data_atualizacao' } });
 
 module.exports = mongoose.model('User', UserSchema);

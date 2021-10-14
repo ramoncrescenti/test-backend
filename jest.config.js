@@ -6,6 +6,8 @@
 module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
+  preset: '@shelf/jest-mongodb',
+  watchPathIgnorePatterns: ['globalConfig'],
 
   // Stop running tests after `n` failures
   bail: true,
@@ -146,9 +148,9 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-   testMatch: [
-     "**/tests/**/*.test.js?(x)",
-   ],
+  testMatch: [
+    "**/tests/**/*.test.js?(x)",
+  ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [

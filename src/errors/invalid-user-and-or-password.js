@@ -7,7 +7,7 @@ class InvalidUserAndOrPasswordError extends CustomError {
     super('Usuário e/ou senha inválidos');
     this.error = INVALID_USER_AND_OR_PASSWORD_ERROR;
     this.message = 'Usuário e/ou senha inválidos';
-    this.statusCode = 404;
+    this.statusCode = 401;
   }
 }
 

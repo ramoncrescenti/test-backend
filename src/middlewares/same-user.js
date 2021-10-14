@@ -1,8 +1,6 @@
 const jwt = require('jsonwebtoken');
 const UnauthorizedError = require('../errors/unauthorized-error');
 
-const unauthorizedError = new UnauthorizedError();
-
 function sameUserMiddleware({
   headers,
   params,
@@ -10,18 +8,15 @@ function sameUserMiddleware({
   const { id } = params;
   const { authorization } = headers;
   if (!authorization) {
-    res.status(unauthorizedError.statusCode)
-      .json(unauthorizedError.toJson());
+    throw new UnauthorizedError();
   }
   const [, token] = authorization.split(' ');
   if (!token) {
-    res.status(unauthorizedError.statusCode)
-      .json(unauthorizedError.toJson());
+    throw new UnauthorizedError();
   }
   const { _id } = jwt.decode(token, process.env.JWT);
   if (_id !== id) {
-    res.status(unauthorizedError.statusCode)
-      .json(unauthorizedError.toJson());
+    throw new UnauthorizedError();
   }
   next();
 }

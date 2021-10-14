@@ -7,7 +7,7 @@ class InvalidSessionError extends CustomError {
     super('Sessão inválida');
     this.error = INVALID_SESSION_ERROR;
     this.message = 'Sessão inválida';
-    this.statusCode = 409;
+    this.statusCode = 401;
   }
 }
 

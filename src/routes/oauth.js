@@ -11,12 +11,12 @@ const router = express.Router();
 router.post(
   '/signup',
   validate([
-    body('nome').isString().isEmpty(),
+    body('nome').isString(),
     body('email').isEmail(),
     body('senha').isString(),
     body('telefones').isArray(),
-    body('telefones.*.numero').isAlphanumeric('pt-BR').isLength({ min: 8, max: 9 }),
-    body('telefones.*.ddd').isString().isLength({ min: 2, max: 2 }),
+    body('telefones.*.numero').isNumeric(['pt-BR'], { no_symbols: true }).isLength({ min: 8, max: 9 }),
+    body('telefones.*.ddd').isNumeric(['pt-BR'], { no_symbols: true }).isLength({ min: 2, max: 2 }),
   ]),
   signUp,
 );
