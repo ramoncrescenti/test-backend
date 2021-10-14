@@ -57,7 +57,7 @@ $ npm run test
 
 ## How to use the API
 
-Here is a [Postman Documentation](hhttps://documenter.getpostman.com/view/16820458/UV5UkKQH) that describes how the API should be correctly used.
+Here is a [Postman Documentation](https://documenter.getpostman.com/view/16820458/UV5UkKQH) that describes how the API should be correctly used.
 
 ## Routes
 
